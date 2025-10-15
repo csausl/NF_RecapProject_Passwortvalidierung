@@ -13,7 +13,7 @@
 - erlaubte Sonderzeichen: !@#$%^&*()-_+=?.,;:
 
 # Usage
-- Bei Start wird per command line eine Passworteingabe erbeten
+Bei Start wird per command line eine Passworteingabe erbeten
 ```
 Hello, bitte gib ein Passwort ein.
 Bedenke die Passwort Policy.
