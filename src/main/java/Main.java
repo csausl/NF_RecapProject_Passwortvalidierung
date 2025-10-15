@@ -1,4 +1,4 @@
-import java.util.Locale;
+//import java.util.Locale;
 
 public class Main {
     public  static void main(String[] args) {
@@ -22,9 +22,7 @@ public class Main {
     // Minimum Länge prüfen
     public static boolean hasMinLength(String password, int min){
         if(Main.isNullOrEmpty(password)){return false;}
-        else if(password.length() < min){return false;}
-        else if(password.length() >= min){return true;}
-        else{return false;}
+        else return password.length() >= min;
     }
 
     // Auf min. eine Ziffer Prüfen
@@ -103,15 +101,11 @@ public class Main {
     // Hilfsmethode
     public static boolean isUnderMaximumLength(String password, int max){
         if(Main.isNullOrEmpty(password)){return false;}
-        else if(password.length() < max){return true;}
-        else{return false;}
+        else return password.length() < max;
     }
 
 
     public static boolean isNullOrEmpty(String password){
-        if(password==null || password.isBlank()){
-            return true;
-        }
-        else{return false;}
+        return password == null || password.isBlank();
     }
 }
