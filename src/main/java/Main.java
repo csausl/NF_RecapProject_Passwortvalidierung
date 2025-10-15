@@ -79,8 +79,22 @@ public class Main {
     }
 
 
-    //public static boolean containsSpecialChar(String password, String allowed){return true;}
-
+    // request for comments
+    public static boolean containsSpecialChar(String password, String allowed){
+        //check if a char in password is equal to allowed list of special chars
+        char[] passwordChars=password.toCharArray();
+        char[] allowedChars=allowed.toCharArray();
+        boolean flag=false;
+        for (char passwordChar : passwordChars) {
+            for (char allowedChar : allowedChars) {
+                if (passwordChar == allowedChar) {
+                    flag = true;
+                    break;
+                }
+            }
+        }
+        return flag;
+    }
 
     public static boolean isValid(String password){
         boolean flag=false;
