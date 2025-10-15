@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class MainTest {
     @Test
     void mainTest() {
-        //System.out.println("Hello World");
     }
+
 
 }
