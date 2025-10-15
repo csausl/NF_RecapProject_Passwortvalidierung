@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -15,6 +16,7 @@ class MainTest {
     }
 
     @Test
+    @DisplayName("hasMinLength True Wenn 9")
     void hasMinLength_shouldReturnTrue_WhenLenghtIs9() {
         //GIVEN
         String password = "abcdefkli";
