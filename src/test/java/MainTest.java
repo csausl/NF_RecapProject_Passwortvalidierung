@@ -18,11 +18,12 @@ class MainTest {
     void hasMinLength_shouldReturnTrue_WhenLenghtIs9() {
         //GIVEN
         String password = "abcdefkli";
-        boolean expected = true;
+        //boolean expected = true;
         //THEN
         boolean actual = Main.hasMinLength(password, 8);
         //WHEN
-        assertEquals(expected, actual);
+        //assertEquals(expected, actual);
+        assertTrue(actual);
     }
 
     @Test

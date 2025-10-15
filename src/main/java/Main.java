@@ -6,25 +6,15 @@ public class Main {
         System.out.println("Hello, bitte gib ein Passwort ein.");
         System.out.println("Bedenke die Passwort Policy.");
         System.out.println("Eingabe: ");
-        // ein kommentar in Master Branch
 
         // gib ein Passwort ein
         Scanner sc = new Scanner(System.in);
         String input = sc.nextLine();
         input = input == null ? "" : input.trim();
 
-        //if(containsUpper(input)) {
-        //    System.out.println("hat einen großbuchstaben");
-        //}
-        //else{
-        //    System.out.println("hat keinen");
-        //}
-
         // checke passwort
         if(isValid(input)) System.out.println("valid password");
         else System.out.println("invalid password");
-
-        // ein kommentar in dev branch
     }
 
 
