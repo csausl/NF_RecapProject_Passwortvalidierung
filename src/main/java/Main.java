@@ -40,6 +40,7 @@ public class Main {
         }
     }
 
+    // beinhaltet min 1 groß und kleinbuchstaben
     public static boolean containsUpperAndLower(String password){
         if(Main.isNullOrEmpty(password)){return false;}
         else if(password.length() < 2){return false;}
@@ -56,6 +57,7 @@ public class Main {
         }
     }
 
+    // gegen liste standarpasswörter prüfen
     public static boolean isCommonPassword(String password){
         String[] common={"password", "Passwort1", "12345678", "Aa345678","Neuefische1"};
         //for (int i = 0; i < common.length; i++){
@@ -79,7 +81,7 @@ public class Main {
     }
 
 
-    // request for comments
+    // check auf special charascters
     public static boolean containsSpecialChar(String password, String allowed){
         //check if a char in password is equal to allowed list of special chars
         char[] passwordChars=password.toCharArray();
@@ -96,6 +98,7 @@ public class Main {
         return flag;
     }
 
+    // alle checks kombinieren
     public static boolean isValid(String password){
         boolean flag=false;
         int minimumLength=8;
@@ -120,7 +123,7 @@ public class Main {
         else return password.length() < max;
     }
 
-
+    // check ob null oder leer
     public static boolean isNullOrEmpty(String password){
         return password == null || password.isBlank();
     }
