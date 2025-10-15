@@ -129,7 +129,64 @@ class MainTest {
     }
 
     @Test
-    void containsUpperAndLower() {
+    void containsUpperAndLower_shouldReturnFalse_WhenStringIsA() {
+        //GIVEN
+        String password = "A";
+        boolean expected = false;
+        //THEN
+        boolean actual = Main.containsUpperAndLower(password);
+        //WHEN
+        assertEquals(expected, actual);
+    }
+    @Test
+    void containsUpperAndLower_shouldReturnFalse_WhenStringIsABCD() {
+        //GIVEN
+        String password = "ABCD";
+        boolean expected = false;
+        //THEN
+        boolean actual = Main.containsUpperAndLower(password);
+        //WHEN
+        assertEquals(expected, actual);
+    }
+    @Test
+    void containsUpperAndLower_shouldReturnFalse_WhenStringIsabcd() {
+        //GIVEN
+        String password = "abcd";
+        boolean expected = false;
+        //THEN
+        boolean actual = Main.containsUpperAndLower(password);
+        //WHEN
+        assertEquals(expected, actual);
+    }
+    @Test
+    void containsUpperAndLower_shouldReturnFalse_WhenStringIsEmpty() {
+        //GIVEN
+        String password = "";
+        boolean expected = false;
+        //THEN
+        boolean actual = Main.containsUpperAndLower(password);
+        //WHEN
+        assertEquals(expected, actual);
+    }
+    @Test
+    void containsUpperAndLower_shouldReturnFalse_WhenStringIsNull() {
+        //GIVEN
+        String password = null;
+        boolean expected = false;
+        //THEN
+        boolean actual = Main.containsUpperAndLower(password);
+        //WHEN
+        assertEquals(expected, actual);
+    }
+    @Test
+    void containsUpperAndLower_shouldReturnTrue_WhenStringIsaB() {
+        //GIVEN
+        String password = "aB";
+        boolean expected = true;
+        //THEN
+        boolean actual = Main.containsUpperAndLower(password);
+        //WHEN
+        assertEquals(expected, actual);
     }
 
     @Test

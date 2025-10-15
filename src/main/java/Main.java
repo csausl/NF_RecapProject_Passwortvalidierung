@@ -32,8 +32,21 @@ public class Main {
         }
     }
 
+    public static boolean containsUpperAndLower(String password){
+        if(Main.isNullOrEmpty(password)){return false;}
+        else if(password.length() < 2){return false;}
+        else {
+            boolean upperFlag = false;
+            boolean lowerFlag = false;
+            for(int i = 0; i < password.length(); i++){
+                char character = password.charAt(i);
+                if(Character.isUpperCase(character)){upperFlag = true;}
+                else if(Character.isLowerCase(character)){lowerFlag = true;}
+            }
+            return upperFlag && lowerFlag;
 
-    public static boolean containsUpperAndLower(String password){return true;}
+        }
+    }
     public static boolean isCommonPassword(String password){return true;}
     public static boolean containsSpecialChar(String password, String allowed){return true;}
     public static boolean isValid(String password){return true;}
