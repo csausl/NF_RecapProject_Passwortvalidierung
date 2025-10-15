@@ -35,7 +35,7 @@ Tests:
 - IntelliJ GUI: Maven -> Lifecycle -> test
 
 Results:
-- \target\surefire-reports\MainTest.txt
+- Testergebnis in \target\surefire-reports\MainTest.txt
 
 # Run
 - z.B. `java Main` in .\src\main
