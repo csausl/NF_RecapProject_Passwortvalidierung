@@ -245,8 +245,35 @@ class MainTest {
         assertEquals(expected, actual);
     }
 
-    @Test
-    void containsSpecialChar() {
+    @ParameterizedTest
+    @CsvSource({
+            "Passwort12!, !@#$%^&*()-_+=?.,;:",
+            "h7ll@0weLt, !@#$%^&*()-_+=?.,;:",
+            "Abc1d&efg, !@#$%^&*()-_+=?.,;:",
+    })
+    void containsSpecialChar_ShouldReturnTrue_WhenStringContainsAllowedChar(String password, String allowed) {
+    //GIVEN
+    boolean expected = true;
+    //THEN
+    boolean actual = Main.containsSpecialChar(password, allowed);
+    //WHEN
+    assertEquals(expected, actual);
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "Passwort12, !@#$%^&*()-_+=?.,;:",
+            "h7ll0weLt, !@#$%^&*()-_+=?.,;:",
+            "Abc1defg, !@#$%^&*()-_+=?.,;:",
+            "A<bc1de>fg, !@#$%^&*()-_+=?.,;:",
+    })
+    void containsSpecialChar_ShouldReturnFalse_WhenStringDoesNotContainAllowedChar(String password, String allowed) {
+        //GIVEN
+        boolean expected = false;
+        //THEN
+        boolean actual = Main.containsSpecialChar(password, allowed);
+        //WHEN
+        assertEquals(expected, actual);
     }
 
     @Test
