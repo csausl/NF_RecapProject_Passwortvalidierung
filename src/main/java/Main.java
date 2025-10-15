@@ -1,3 +1,5 @@
+import java.util.Locale;
+
 public class Main {
     public  static void main(String[] args) {
         System.out.println("Hello World");
@@ -6,7 +8,8 @@ public class Main {
 
         // gib ein Passwort ein
         String pw = "Neuefische1";
-
+        //String eingabe="hallo";
+        //eingabe = eingabe == null ? "" : eingabe.trim().toLowerCase(Locale.ROOT);
         // checke passwort
         if(isValid(pw)) System.out.println("come in");
         else System.out.println("nope");
@@ -55,6 +58,12 @@ public class Main {
 
     public static boolean isCommonPassword(String password){
         String[] common={"password", "Passwort1", "12345678", "Aa345678","Neuefische1"};
+        for (int i = 0; i < common.length; i++){
+            //  ternary conditional operator checks condition before "?" 'result if true' : 'result if false'
+            common[i] = (common[i] == null ? "" : common[i].trim().toLowerCase(Locale.ROOT));
+        }
+
+
 
         boolean flag=false;
         if(Main.isNullOrEmpty(password)){return false;}
