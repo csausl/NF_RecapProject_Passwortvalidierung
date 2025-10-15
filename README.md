@@ -39,8 +39,10 @@ Results:
 
 # Run
 - z.B. `java Main` in .\src\main
+- IntelliJ GUI Main.java Run 'Main'
 
 # Bonus umgesetzt:
+- Sonderzeichen Policy aktiviert 
 - Junit @ParameterizedTest für Testdatensätze (z. B. gültig/ungültig Liste).
 - CLI Abfrage für Usereingabe
 - Manuelles Kompilieren per `javac Main.java` in .\src\main
