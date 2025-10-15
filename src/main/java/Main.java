@@ -1,5 +1,4 @@
 //import java.util.Locale;
-
 import java.util.Scanner;
 
 public class Main {
@@ -58,13 +57,19 @@ public class Main {
     }
 
     public static boolean isCommonPassword(String password){
-        String[] commonList={"password", "Passwort1", "12345678", "Aa345678","Neuefische1"};
+        String[] common={"password", "Passwort1", "12345678", "Aa345678","Neuefische1"};
+        //for (int i = 0; i < common.length; i++){
+            //  ternary conditional operator checks condition before "?" 'result if true' : 'result if false'
+           // common[i] = (common[i] == null ? "" : common[i].trim().toLowerCase(Locale.ROOT));
+        //}
+
+
 
         boolean flag=false;
         if(Main.isNullOrEmpty(password)){return false;}
         else{
-            for(String commonItem : commonList){
-                if(commonItem.equals(password)){
+            for(String pw : common){
+                if(pw.equals(password)){
                     flag=true;
                     break;
                 }
@@ -74,41 +79,22 @@ public class Main {
     }
 
 
-
+    //public static boolean containsSpecialChar(String password, String allowed){return true;}
 
 
     public static boolean isValid(String password){
         boolean flag=false;
         int minimumLength=8;
         int maximumLength=32;
-        String allowedSpecialChars="!@#$%^&*()-_+=?.,;:";
         if(Main.isNullOrEmpty(password)){return false;}
         else if(
                 Main.hasMinLength(password, minimumLength) &&
                 Main.isUnderMaximumLength(password, maximumLength) &&
                 Main.containsDigit(password) &&
                 Main.containsUpperAndLower(password) &&
-                Main.containsSpecialChar(password, allowedSpecialChars) &&
                 !Main.isCommonPassword(password)
         ){
             flag=true;
-        }
-        return flag;
-    }
-
-    // request for comments
-    public static boolean containsSpecialChar(String password, String allowed){
-        //check if a char in password is equal to allowed list of special chars
-        char[] passwordChars=password.toCharArray();
-        char[] allowedChars=allowed.toCharArray();
-        boolean flag=false;
-        for (char passwordChar : passwordChars) {
-            for (char allowedChar : allowedChars) {
-                if (passwordChar == allowedChar) {
-                    flag = true;
-                    break;
-                }
-            }
         }
         return flag;
     }
