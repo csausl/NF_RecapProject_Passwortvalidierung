@@ -58,14 +58,17 @@ public class Main {
         if(Main.isNullOrEmpty(password)){return false;}
         else{
             for(String pw : common){
-                if(pw.equals(password)){flag=true;}
+                if(pw.equals(password)){
+                    flag=true;
+                    break;
+                }
             }
         }
         return flag;
     }
 
 
-    public static boolean containsSpecialChar(String password, String allowed){return true;}
+    //public static boolean containsSpecialChar(String password, String allowed){return true;}
 
 
     public static boolean isValid(String password){
@@ -93,7 +96,7 @@ public class Main {
 
 
     public static boolean isNullOrEmpty(String password){
-        if(password==null || password.isEmpty() || password.isBlank()){
+        if(password==null || password.isBlank()){
             return true;
         }
         else{return false;}
