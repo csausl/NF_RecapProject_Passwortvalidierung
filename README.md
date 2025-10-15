@@ -9,3 +9,7 @@ Kriterien für ein gültiges Passwort:
 Optional:
 - min. ein Sonderzeichen
 - Mindestanzahl unterschiedlicher Zeichengruppen
+
+Bonus enthalten:
+- Junit @ParameterizedTest für Testdatensätze (z. B. gültig/ungültig Liste).
+- 
