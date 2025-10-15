@@ -60,13 +60,6 @@ public class Main {
     // gegen liste standarpasswörter prüfen
     public static boolean isCommonPassword(String password){
         String[] common={"password", "Passwort1", "12345678", "Aa345678","Neuefische1"};
-        //for (int i = 0; i < common.length; i++){
-            //  ternary conditional operator checks condition before "?" 'result if true' : 'result if false'
-           // common[i] = (common[i] == null ? "" : common[i].trim().toLowerCase(Locale.ROOT));
-        //}
-
-
-
         boolean flag=false;
         if(Main.isNullOrEmpty(password)){return false;}
         else{
@@ -81,7 +74,7 @@ public class Main {
     }
 
 
-    // check auf special charascters
+    // request for comment
     public static boolean containsSpecialChar(String password, String allowed){
         //check if a char in password is equal to allowed list of special chars
         char[] passwordChars=password.toCharArray();
