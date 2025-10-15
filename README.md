@@ -12,10 +12,22 @@
 - kein Standard/schwaches Passwort
 - erlaubte Sonderzeichen: !@#$%^&*()-_+=?.,;:
 
+# Usage
+- Bei Start wird per command line eine Passworteingabe erbeten
+```
+Hello, bitte gib ein Passwort ein.
+Bedenke die Passwort Policy.
+Eingabe: 
+```
+
+Rückgabe ist entweder ``valid password`` oder `invalid password`
+
+
 # Build:
 Build inklusive Tests:
 - `mvn clean verify`
 - IntelliJ GUI: Maven -> Lifecycle -> clean, verify
+- Alternativ `javac Main.java` in .\src\main
 
 # Test
 Tests:
@@ -25,6 +37,8 @@ Tests:
 Results:
 - \target\surefire-reports\MainTest.txt
 
+# Run
+- z.B. `java Main` in .\src\main
 
 # Bonus umgesetzt:
 - Junit @ParameterizedTest für Testdatensätze (z. B. gültig/ungültig Liste).
