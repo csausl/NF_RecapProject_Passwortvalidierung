@@ -97,6 +97,7 @@ public class Main {
 
 
     // request for comment
+
     public static boolean containsSpecialChar(String password, String allowed){
         //check if a char in password is equal to allowed list of special chars
         char[] passwordChars=password.toCharArray();
@@ -118,13 +119,15 @@ public class Main {
         boolean flag=false;
         int minimumLength=8;
         int maximumLength=32;
+        String allowed="!@#$%^&*()-_+=?.,;:";
         if(Main.isNullOrEmpty(password)){return false;}
         else if(
-                Main.hasMinLength(password, minimumLength) &&
-                Main.isUnderMaximumLength(password, maximumLength) &&
-                Main.containsDigit(password) &&
-                Main.containsUpperAndLower(password) &&
-                !Main.isCommonPassword(password)
+                Main.hasMinLength(password, minimumLength)
+                && Main.isUnderMaximumLength(password, maximumLength)
+                && Main.containsDigit(password)
+                && Main.containsUpperAndLower(password)
+                && Main.containsSpecialChar(password, allowed)
+                && !Main.isCommonPassword(password)
         ){
             flag=true;
         }
