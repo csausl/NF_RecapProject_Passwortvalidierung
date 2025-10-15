@@ -11,7 +11,7 @@ public class Main {
         if(isValid(pw)) System.out.println("come in");
         else System.out.println("nope");
 
-
+        // ein kommentar in dev branch
     }
 
     // Passwort Methoden
@@ -60,22 +60,27 @@ public class Main {
         if(Main.isNullOrEmpty(password)){return false;}
         else{
             for(String pw : common){
-                if(pw.equals(password)){flag=true;}
+                if(pw.equals(password)){
+                    flag=true;
+                    break;
+                }
             }
         }
         return flag;
     }
 
 
-    public static boolean containsSpecialChar(String password, String allowed){return true;}
+    //public static boolean containsSpecialChar(String password, String allowed){return true;}
 
 
     public static boolean isValid(String password){
         boolean flag=false;
         int minimumLength=8;
+        int maximumLength=8;
         if(Main.isNullOrEmpty(password)){return false;}
         else if(
                 Main.hasMinLength(password, minimumLength) &&
+                Main.isUnderMaximumLength(password, maximumLength) &&
                 Main.containsDigit(password) &&
                 Main.containsUpperAndLower(password) &&
                 !Main.isCommonPassword(password)
@@ -95,7 +100,7 @@ public class Main {
 
 
     public static boolean isNullOrEmpty(String password){
-        if(password==null || password.isEmpty() || password.isBlank()){
+        if(password==null || password.isBlank()){
             return true;
         }
         else{return false;}
