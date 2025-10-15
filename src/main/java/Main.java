@@ -58,10 +58,10 @@ public class Main {
 
     public static boolean isCommonPassword(String password){
         String[] common={"password", "Passwort1", "12345678", "Aa345678","Neuefische1"};
-        for (int i = 0; i < common.length; i++){
+        //for (int i = 0; i < common.length; i++){
             //  ternary conditional operator checks condition before "?" 'result if true' : 'result if false'
-            common[i] = (common[i] == null ? "" : common[i].trim().toLowerCase(Locale.ROOT));
-        }
+           // common[i] = (common[i] == null ? "" : common[i].trim().toLowerCase(Locale.ROOT));
+        //}
 
 
 
@@ -85,7 +85,7 @@ public class Main {
     public static boolean isValid(String password){
         boolean flag=false;
         int minimumLength=8;
-        int maximumLength=8;
+        int maximumLength=32;
         if(Main.isNullOrEmpty(password)){return false;}
         else if(
                 Main.hasMinLength(password, minimumLength) &&
