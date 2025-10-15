@@ -1,4 +1,6 @@
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -248,7 +250,45 @@ class MainTest {
     }
 
     @Test
-    void isValid() {
+    void isValid_shouldReturnTrue_WhenPasswordIsAJLI7ddf9() {
+        //GIVEN
+        String password = "AJLI7ddf9";
+        boolean expected = true;
+        //THEN
+        boolean actual = Main.isValid(password);
+        //WHEN
+        assertEquals(expected, actual);
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "Passwort12",
+            "h7ll0weLt",
+    })
+    void isValid_shouldReturnTrue_WhenPasswordIsX(String x) {
+        //GIVEN
+        boolean expected = true;
+        //THEN
+        boolean actual = Main.isValid(x);
+        //WHEN
+        assertEquals(expected, actual);
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "password",
+            "Passwort1",
+            "12345678",
+            "Aa345678",
+            "Neuefische1"
+    })
+    void isValid_shouldReturnFalse_WhenPasswordIsOnCommonList(String pw) {
+        //GIVEN
+        boolean expected = false;
+        //THEN
+        boolean actual = Main.isValid(pw);
+        //WHEN
+        assertEquals(expected, actual);
     }
 
 
