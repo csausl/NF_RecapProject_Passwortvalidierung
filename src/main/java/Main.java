@@ -26,13 +26,8 @@ public class Main {
 
         // ein kommentar in dev branch
     }
-    public static boolean containsUpper(String password){
-        return !password.toLowerCase().equals(password); // wenn password to lower case == password ergibt true
-    }
 
-    public static boolean containsLower(String password){
-        return !password.toLowerCase().equals(password);
-    }
+
 
     // Passwort Methoden
 
@@ -74,6 +69,14 @@ public class Main {
         // alternativ
         // return !password.toUpperCase().equals(password);
         // return !password.toLowerCase().equals(password);
+    }
+
+    public static boolean containsUpper(String password){
+        return !password.toLowerCase().equals(password); // wenn password to lower case == password ergibt true
+    }
+
+    public static boolean containsLower(String password){
+        return !password.toLowerCase().equals(password);
     }
 
     // gegen liste standarpasswörter prüfen
