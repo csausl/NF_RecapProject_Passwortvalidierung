@@ -74,9 +74,11 @@ public class Main {
     public static boolean isValid(String password){
         boolean flag=false;
         int minimumLength=8;
+        int maximumLength=8;
         if(Main.isNullOrEmpty(password)){return false;}
         else if(
                 Main.hasMinLength(password, minimumLength) &&
+                Main.isUnderMaximumLength(password, maximumLength) &&
                 Main.containsDigit(password) &&
                 Main.containsUpperAndLower(password) &&
                 !Main.isCommonPassword(password)
