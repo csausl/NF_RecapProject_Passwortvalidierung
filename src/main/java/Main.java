@@ -3,9 +3,12 @@ public class Main {
         System.out.println("Hello World");
 
         // gib ein Passwort ein
+        String pw = "Neuefische1";
 
         // checke passwort
-        isValid("test");
+        if(isValid(pw)) System.out.println("come in");
+        else System.out.println("nope");
+
 
     }
 
@@ -61,8 +64,24 @@ public class Main {
         return flag;
     }
 
+
     public static boolean containsSpecialChar(String password, String allowed){return true;}
-    public static boolean isValid(String password){return true;}
+
+
+    public static boolean isValid(String password){
+        boolean flag=false;
+        int minimumLength=8;
+        if(Main.isNullOrEmpty(password)){return false;}
+        else if(
+                Main.hasMinLength(password, minimumLength) &&
+                Main.containsDigit(password) &&
+                Main.containsUpperAndLower(password) &&
+                !Main.isCommonPassword(password)
+        ){
+            flag=true;
+        }
+        return flag;
+    }
 
 
     // Hilfsmethode
