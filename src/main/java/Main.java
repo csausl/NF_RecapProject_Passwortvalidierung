@@ -2,7 +2,7 @@
 import java.util.Scanner;
 
 public class Main {
-    public  static void main(String[] args) {
+    public static void main(String[] args) {
         System.out.println("Hello, bitte gib ein Passwort ein.");
         System.out.println("Bedenke die Passwort Policy.");
         System.out.println("Eingabe: ");
@@ -12,11 +12,26 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         String input = sc.nextLine();
         input = input == null ? "" : input.trim();
+
+        //if(containsUpper(input)) {
+        //    System.out.println("hat einen großbuchstaben");
+        //}
+        //else{
+        //    System.out.println("hat keinen");
+        //}
+
         // checke passwort
         if(isValid(input)) System.out.println("valid password");
         else System.out.println("invalid password");
 
         // ein kommentar in dev branch
+    }
+    public static boolean containsUpper(String password){
+        return !password.toLowerCase().equals(password); // wenn password to lower case == password ergibt true
+    }
+
+    public static boolean containsLower(String password){
+        return !password.toLowerCase().equals(password);
     }
 
     // Passwort Methoden
@@ -55,11 +70,15 @@ public class Main {
             return upperFlag && lowerFlag;
 
         }
+
+        // alternativ
+        // return !password.toUpperCase().equals(password);
+        // return !password.toLowerCase().equals(password);
     }
 
     // gegen liste standarpasswörter prüfen
+    static String[] common={"password", "Passwort1", "12345678", "Aa345678","Neuefische1"};
     public static boolean isCommonPassword(String password){
-        String[] common={"password", "Passwort1", "12345678", "Aa345678","Neuefische1"};
         boolean flag=false;
         if(Main.isNullOrEmpty(password)){return false;}
         else{
