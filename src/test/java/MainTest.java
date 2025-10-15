@@ -276,22 +276,11 @@ class MainTest {
         assertEquals(expected, actual);
     }
 
-    @Test
-    void isValid_shouldReturnTrue_WhenPasswordIsAJLI7ddf9() {
-        //GIVEN
-        String password = "AJLI7ddf9";
-        boolean expected = true;
-        //THEN
-        boolean actual = Main.isValid(password);
-        //WHEN
-        assertEquals(expected, actual);
-    }
-
     @ParameterizedTest
     @CsvSource({
-            "Passwort12",
-            "h7ll0weLt",
-            "Abc1defg",
+            "Passw!ort12",
+            "h7ll0w(eLt",
+            "Abc1defg#",
     })
     void isValid_shouldReturnTrue_WhenPasswordIsOnTrueExampleList(String pw) {
         //GIVEN

@@ -16,6 +16,16 @@
 Build inklusive Tests:
 - `mvn clean verify`
 
+# Test
+Tests:
+- `mvn test`
+- IntelliJ GUI: Maven -> Lifecycle -> test
+
+Results:
+- \target\surefire-reports\MainTest.txt
+
+#
+
 # Bonus umgesetzt:
 - Junit @ParameterizedTest für Testdatensätze (z. B. gültig/ungültig Liste).
 - 

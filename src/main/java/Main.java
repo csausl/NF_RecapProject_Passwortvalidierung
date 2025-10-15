@@ -1,17 +1,21 @@
 //import java.util.Locale;
 
+import java.util.Scanner;
+
 public class Main {
     public  static void main(String[] args) {
-        System.out.println("Hello World");
+        System.out.println("Hello, bitte gib ein Passwort ein.");
+        System.out.println("Bedenke die Passwort Policy.");
+        System.out.println("Eingabe: ");
         // ein kommentar in Master Branch
 
         // gib ein Passwort ein
-        String pw = "Neuefische1";
-        //String eingabe="hallo";
-        //eingabe = eingabe == null ? "" : eingabe.trim().toLowerCase(Locale.ROOT);
+        Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine();
+        input = input == null ? "" : input.trim();
         // checke passwort
-        if(isValid(pw)) System.out.println("come in");
-        else System.out.println("nope");
+        if(isValid(input)) System.out.println("valid password");
+        else System.out.println("invalid password");
 
         // ein kommentar in dev branch
     }
@@ -77,14 +81,14 @@ public class Main {
         boolean flag=false;
         int minimumLength=8;
         int maximumLength=32;
-        //String allowedSpecialChars="!@#$%^&*()-_+=?.,;:";
+        String allowedSpecialChars="!@#$%^&*()-_+=?.,;:";
         if(Main.isNullOrEmpty(password)){return false;}
         else if(
                 Main.hasMinLength(password, minimumLength) &&
                 Main.isUnderMaximumLength(password, maximumLength) &&
                 Main.containsDigit(password) &&
                 Main.containsUpperAndLower(password) &&
-                //Main.containsSpecialChar(password, allowedSpecialChars) &&
+                Main.containsSpecialChar(password, allowedSpecialChars) &&
                 !Main.isCommonPassword(password)
         ){
             flag=true;
