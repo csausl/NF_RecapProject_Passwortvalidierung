@@ -190,7 +190,57 @@ class MainTest {
     }
 
     @Test
-    void isCommonPassword() {
+    void isCommonPassword_shouldReturnTrue_WhenPasswordIspassword() {
+        //GIVEN
+        String password = "password";
+        boolean expected = true;
+        //THEN
+        boolean actual = Main.isCommonPassword(password);
+        //WHEN
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void isCommonPassword_shouldReturnTrue_WhenPasswordIsPasswort1() {
+        //GIVEN
+        String password = "Passwort1";
+        boolean expected = true;
+        //THEN
+        boolean actual = Main.isCommonPassword(password);
+        //WHEN
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void isCommonPassword_shouldReturnTrue_WhenPasswordIs12345678() {
+        //GIVEN
+        String password = "12345678";
+        boolean expected = true;
+        //THEN
+        boolean actual = Main.isCommonPassword(password);
+        //WHEN
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void isCommonPassword_shouldReturnTrue_WhenPasswordIsAa345678() {
+        //GIVEN
+        String password = "Aa345678";
+        boolean expected = true;
+        //THEN
+        boolean actual = Main.isCommonPassword(password);
+        //WHEN
+        assertEquals(expected, actual);
+    }
+    @Test
+    void isCommonPassword_shouldReturnTrue_WhenPasswordIsNeuefische1() {
+        //GIVEN
+        String password = "Neuefische1";
+        boolean expected = true;
+        //THEN
+        boolean actual = Main.isCommonPassword(password);
+        //WHEN
+        assertEquals(expected, actual);
     }
 
     @Test

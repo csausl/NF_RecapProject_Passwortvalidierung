@@ -47,7 +47,20 @@ public class Main {
 
         }
     }
-    public static boolean isCommonPassword(String password){return true;}
+
+    public static boolean isCommonPassword(String password){
+        String[] common={"password", "Passwort1", "12345678", "Aa345678","Neuefische1"};
+
+        boolean flag=false;
+        if(Main.isNullOrEmpty(password)){return false;}
+        else{
+            for(String pw : common){
+                if(pw.equals(password)){flag=true;}
+            }
+        }
+        return flag;
+    }
+
     public static boolean containsSpecialChar(String password, String allowed){return true;}
     public static boolean isValid(String password){return true;}
 
