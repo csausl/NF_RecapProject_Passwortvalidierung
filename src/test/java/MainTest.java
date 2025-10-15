@@ -264,12 +264,31 @@ class MainTest {
     @CsvSource({
             "Passwort12",
             "h7ll0weLt",
+            "Abc1defg",
     })
-    void isValid_shouldReturnTrue_WhenPasswordIsX(String x) {
+    void isValid_shouldReturnTrue_WhenPasswordIsOnTrueExampleList(String pw) {
         //GIVEN
         boolean expected = true;
         //THEN
-        boolean actual = Main.isValid(x);
+        boolean actual = Main.isValid(pw);
+        //WHEN
+        assertEquals(expected, actual);
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "Abc1def",
+            "Abcdefgh",
+            "abcdefg1",
+            "ABCDEFG1",
+            "Passwort1",
+
+    })
+    void isValid_shouldReturnFalse_WhenPasswordIsOnFalseExampleList(String pw) {
+        //GIVEN
+        boolean expected = false;
+        //THEN
+        boolean actual = Main.isValid(pw);
         //WHEN
         assertEquals(expected, actual);
     }
